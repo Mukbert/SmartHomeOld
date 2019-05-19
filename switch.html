@@ -10,6 +10,9 @@
 		function handle(cb) {
 			$.post("receiver/"+cb.id+"/" + cb.checked, function(){});
 		}
+		function send(ID, value) {
+			$.post("receiver/"+"switch"+"/" + ID + "-" + value, function(){});
+		}
 	</script>
 </head>
 <body>
@@ -24,7 +27,7 @@
 		<div class="item">
 			<p>Steckdose 1</p>
 			<label class="switch">
-				<input type="checkbox" id="switch_1" onclick='handle(this)'>
+				<input type="checkbox" id="switch_1" onclick='handle(this);send("B3", this.checked)'>
 				<span class="slider round"></span>
 			</label>
 			<script>
@@ -39,29 +42,6 @@
 			</label>
 			<script>
 				document.getElementById("switch_2").checked = {{switch_2}};
-			</script>
-		</div>
-	</div>
-	<div class="group">
-		<h2>Steckdosengruppe 2:</h2>
-		<div class="item">
-			<p>Steckdose A</p>
-			<label class="switch">
-				<input type="checkbox" id="switch_a" onclick='handle(this)'>
-				<span class="slider round"></span>
-			</label>
-			<script>
-				document.getElementById("switch_a").checked = {{switch_a}};
-			</script>
-		</div>
-		<div class="item">
-			<p>Steckdose B</p>
-			<label class="switch">
-				<input type="checkbox" id="switch_b" onclick='handle(this)'>
-				<span class="slider round"></span>
-			</label>
-			<script>
-				document.getElementById("switch_b").checked = {{switch_b}};
 			</script>
 		</div>
 	</div>

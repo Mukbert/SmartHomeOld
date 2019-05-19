@@ -9,8 +9,10 @@ var["switch_1"] = "false"
 var["switch_2"] = "false"
 var["switch_a"] = "false"
 var["switch_b"] = "false"
+var["light_0"] = 40
 var["light_1"] = 40
 var["light_2"] = 80
+var["color_0"] = "e66465"
 var["color_1"] = "e66465"
 var["color_2"] = "e66465"
 
@@ -62,6 +64,12 @@ def worker(key, value):
         os.system("pigs p " + pins[0] + " " + str(red))
         os.system("pigs p " + pins[1] + " " + str(green))
         os.system("pigs p " + pins[2] + " " + str(blue))
+    elif key = "switch":
+        x = value.split("-")
+        key = x[0]
+        value = "ON" if x[1] else "OFF"
+        
+        os.system("/opt/433Utils/RPi_utils/run.sh " + key + " " + value)
 
 
 
