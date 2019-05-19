@@ -48,9 +48,13 @@ def hello(device, action):
 
 @route('/receiver/<key>/<value>', method = 'POST')
 def worker(key, value):
-    #print(key, value, file=sys.stderr)
+    print(key, value, file=sys.stderr)
     var[key] = value
+
+    if key == "infrarot":
+        os.system("irsend SEND_ONCE PioneerAVR " + value)
 
 
 if __name__ == '__main__':   
-    run(debug=True, reloader=True, port=5000)
+    #run(debug=True, reloader=True, port=5000)
+    run(host="192.168.1.68", debug=True, reloader=True, port=5000)
