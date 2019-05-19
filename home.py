@@ -59,9 +59,9 @@ def worker(key, value):
         value = x[1]
         red, green, blue = hex_to_rgb(value)
         
-        os.system("pigs p " + pins[0] + " " + red)
-        os.system("pigs p " + pins[1] + " " + green)
-        os.system("pigs p " + pins[2] + " " + blue)
+        os.system("pigs p " + pins[0] + " " + str(red))
+        os.system("pigs p " + pins[1] + " " + str(green))
+        os.system("pigs p " + pins[2] + " " + str(blue))
 
 
 
