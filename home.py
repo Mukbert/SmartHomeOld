@@ -42,12 +42,18 @@ def switch(page):
         try:
             #var["temperature"] = command("/etc/openhab2/scripts/weatherstation.py temperature")
             with open("/sys/bus/w1/devices/28-8000002b2904/w1_slave") as file:
-                var["temperature"] = float(file.readlines()[1].split("=")[1]) / 1000
+                var["temperature"] = round(float(file.readlines()[1].split("=")[1]) / 1000, 1)
         except:
             var["temperature"] = "ERROR"
             pass
 
-        var["humidity"] = script.get_humidity()
+        try:
+            humidity = float(script.get_humidity())
+            humidity = - if humidity > 100 else humidity
+            var["humidity"] = str(humidity)
+        except:
+            var["humidity"] = "ERROR"
+        
         
 
     return template(var["page"] + ".html", **var)
