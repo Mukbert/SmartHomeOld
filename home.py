@@ -1,7 +1,10 @@
 from bottle import route, run, template, static_file, request
 import sys, os, io
 import subprocess
-import script
+try:
+    import script
+except:
+    pass
 
 
 var = dict()
@@ -49,7 +52,7 @@ def switch(page):
 
         try:
             humidity = float(script.get_humidity())
-            humidity = - if humidity > 100 else humidity
+            humidity = "-" if humidity > 100 else humidity
             var["humidity"] = str(humidity)
         except:
             var["humidity"] = "ERROR"
