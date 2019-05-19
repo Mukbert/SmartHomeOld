@@ -92,6 +92,7 @@ def worker(key, value):
         
         os.system("/opt/433Utils/RPi_utils/run.sh " + key + " " + value)
     elif key == "pioneer":
+        print(str(key) + " " + str(value), sys.stderr)
         pioneer.talk(value)
 
 
