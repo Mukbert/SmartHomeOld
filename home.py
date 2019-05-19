@@ -67,7 +67,7 @@ def worker(key, value):
     elif key == "switch":
         x = value.split("-")
         key = x[0]
-        value = "ON" if x[1] else "OFF"
+        value = "ON" if x[1] == "true" else "OFF"
         
         os.system("/opt/433Utils/RPi_utils/run.sh " + key + " " + value)
 
