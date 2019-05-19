@@ -1,5 +1,6 @@
 from bottle import route, run, template, static_file, request
 import sys, os, io
+import subprocess
 
 
 var = dict()
@@ -38,8 +39,14 @@ def switch(page):
 
     if page == "weather":
         try:
-            with open("/sys/bus/w1/devices/28-8000002b2904/w1_slave") as file:
-                var["temperature"] = float(file.readlines()[1].split("=")[1]) / 1000
+            var["temperature"] = command("/etc/openhab2/scripts/weatherstation.py temperature")
+            #with open("/sys/bus/w1/devices/28-8000002b2904/w1_slave") as file:
+            #    var["temperature"] = float(file.readlines()[1].split("=")[1]) / 1000
+        except expression as identifier:
+            pass
+
+        try:
+            var["humidity"] = command("/etc/openhab2/scripts/weatherstation.py humidity")
         except expression as identifier:
             pass
         
@@ -82,6 +89,13 @@ def hex_to_rgb(value):
     value = value.lstrip('#')
     lv = len(value)
     return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+
+def command(cmd):
+    out = subprocess.Popen(cmd.split(" "), 
+           stdout=subprocess.PIPE, 
+           stderr=subprocess.STDOUT)
+    stdout,stderr = out.communicate()
+    return stdout.split()[0]
 
 
 if __name__ == '__main__':   
