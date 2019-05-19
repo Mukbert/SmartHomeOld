@@ -64,7 +64,7 @@ def worker(key, value):
         os.system("pigs p " + pins[0] + " " + str(red))
         os.system("pigs p " + pins[1] + " " + str(green))
         os.system("pigs p " + pins[2] + " " + str(blue))
-    elif key = "switch":
+    elif key == "switch":
         x = value.split("-")
         key = x[0]
         value = "ON" if x[1] else "OFF"
