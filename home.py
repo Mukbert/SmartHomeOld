@@ -35,11 +35,12 @@ def index():
 @route('/<page>')
 def switch(page):
     var["page"] = page
-    if os.path.isfile('/path/to/file'):
-        pass
 
-    html = template(var["page"] + ".html", **var)
-    return html
+    if page == "weather":
+        with open("/sys/bus/w1/devices/28-8000002b2904/w1_slave") as file:
+            var["temperature"] = float(file.read()) / 1000
+    
+    return template(var["page"] + ".html", **var)
 
 @route('/<device>/<action>')
 def hello(device, action):
