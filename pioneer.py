@@ -7,7 +7,8 @@ timeout = 100
 session = telnetlib.Telnet(host, port, timeout)
 
 def talk(cmd):
-	session.write(cmd + "\n")#.encode('ascii')
+	cmd += "\n"
+	session.write(cmd.encode("ascii"))
 	#answ = session.read_until("\r\n")
 	#session.close()
 	#return answ
