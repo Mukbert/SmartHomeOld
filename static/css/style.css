@@ -1,0 +1,79 @@
+body {    
+    background: gray;    
+	 color: white;
+	 padding: 0px;
+	 margin: 0px;
+}
+
+.light{
+	background-color:transparent; 
+	border: none;
+}
+
+.light:focus {
+	background-color:transparent; 
+	border: none;
+}
+
+.row {
+	display: inline-block;
+	width: 100%;
+}
+
+.content {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding-left:10%;
+	max-width:80%;
+	padding-top: 50;
+}
+
+.home {
+	position: fixed;
+	top: 10;
+	left: 10;
+	font-size:10px;
+}
+	
+.block a i{
+	width:50%
+}
+
+.block {
+	float: left;
+	padding: 20px;
+	width: 200;
+	text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+	color: white;
+}
+
+#switch:hover {
+	color: orange;
+}
+
+#light:hover {
+	color: yellow;
+}
+
+#weather:hover {
+	color: blue;
+}
+
+#video:hover {
+	color: red;
+}
+
+#music:hover {
+	color: green;
+}
+
+#settings:hover {
+	color: black;
+}
+

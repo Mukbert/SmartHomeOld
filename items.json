@@ -1,0 +1,12 @@
+[
+	{
+		"id": "switch_1",
+		"type": "switch",
+		"title": "Wandbeleuchtung"
+	},
+	{
+		"id": "lamp_1",
+		"type": "light",
+		"title": "Ambilight"
+	}
+]

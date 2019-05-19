@@ -1,0 +1,43 @@
+<html>
+<head>
+	<link rel="stylesheet" href='static/css/style.css' />
+	<link rel="stylesheet" href='static/css/slide.css'/>
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		function handle(cb) {
+			$.post("receiver/"+cb.id+"/" + cb.value.replace("#", ""), function(){});
+		}
+	</script>
+</head>
+<body>
+<div class="home">
+	<a href="index">
+		<i class='fas fa-home' style='font-size:300%'></i>
+	</a>
+</div>
+<div class="content">
+	<div class="group">
+		<h2>Lichtgruppe 1:</h2>
+		<div>
+			<input type="color" value="#{{color_1}}" class="light" id="color_1" onchange="handle(this)">
+			<label>Beleuchtung</label>
+			<div class="slidecontainer"> 
+				<input type="range" min="0" max="100" value="{{light_1}}" class="slider" id="light_1" onchange="handle(this)">
+			</div>
+		</div>
+		</br>
+		<div>
+			<input type="color" value="#{{color_2}}" class="light" id="color_2" onchange="handle(this)">
+			<label>Ambilight</label>
+			<div class="slidecontainer">
+				<input type="range" min="0" max="100" value="{{light_2}}" class="slider" id="light_2" onchange="handle(this)">
+			</div>
+		</div>
+		</br>
+	</div>
+	
+</div>
+</body>
+</html>

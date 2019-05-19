@@ -1,0 +1,73 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" href='static/css/style.css' />
+	<link rel="stylesheet" href='static/css/switch.css'/>
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		function handle(cb) {
+			$.post("receiver/"+cb.id+"/" + cb.checked, function(){});
+		}
+	</script>
+</head>
+<body>
+<div class="home">
+	<a href="index">
+		<i class='fas fa-home' style='font-size:300%'></i>
+	</a>
+</div>
+<div class="content">
+	<div class="group">
+		<h2>Steckdosengruppe 1:</h2>
+		<div class="item">
+			<p>Steckdose 1</p>
+			<label class="switch">
+				<input type="checkbox" id="switch_1" onclick='handle(this)'>
+				<span class="slider round"></span>
+			</label>
+			<script>
+				document.getElementById("switch_1").checked = {{switch_1}};
+			</script>
+		</div>
+		<div class="item">
+			<p>Steckdose 2</p>
+			<label class="switch">
+				<input type="checkbox" id="switch_2" onclick='handle(this)'>
+				<span class="slider round"></span>
+			</label>
+			<script>
+				document.getElementById("switch_2").checked = {{switch_2}};
+			</script>
+		</div>
+	</div>
+	<div class="group">
+		<h2>Steckdosengruppe 2:</h2>
+		<div class="item">
+			<p>Steckdose A</p>
+			<label class="switch">
+				<input type="checkbox" id="switch_a" onclick='handle(this)'>
+				<span class="slider round"></span>
+			</label>
+			<script>
+				document.getElementById("switch_a").checked = {{switch_a}};
+			</script>
+		</div>
+		<div class="item">
+			<p>Steckdose B</p>
+			<label class="switch">
+				<input type="checkbox" id="switch_b" onclick='handle(this)'>
+				<span class="slider round"></span>
+			</label>
+			<script>
+				document.getElementById("switch_b").checked = {{switch_b}};
+			</script>
+		</div>
+	</div>
+</div>
+<script>
+	//
+</script>
+</body>
+</html>

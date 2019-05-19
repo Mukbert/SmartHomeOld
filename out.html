@@ -1,0 +1,81 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" href='static/css/style.css' />
+	<link rel="stylesheet" href='static/css/switch.css'/>
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		function handle(cb) {
+			$.post("receiver/"+cb.id+"/" + cb.checked, function(){});
+		}
+	</script>
+</head>
+<body>
+<div class="home">
+	<a href="index">
+		<i class='fas fa-home' style='font-size:300%'></i>
+	</a>
+</div>
+<div class="content">
+	&lt;div class=&quot;group&quot;&gt;
+	&lt;h2&gt;Steckdosengruppe 123
+&lt;/h2&gt;
+	&amp;lt;div class=&amp;quot;item&amp;quot;&amp;gt;
+	&amp;lt;p&amp;gt;Steckdose 1
+&amp;lt;/p&amp;gt;
+	&amp;lt;label class=&amp;quot;switch&amp;quot;&amp;gt;
+		&amp;lt;input type=&amp;quot;checkbox&amp;quot; id=&amp;quot;switch_0&amp;quot; onclick=&amp;#039;handle(this)&amp;#039;&amp;gt;
+		&amp;lt;span class=&amp;quot;slider round&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+	&amp;lt;/label&amp;gt;
+	&amp;lt;script&amp;gt;
+		document.getElementById(&amp;quot;switch_0&amp;quot;).checked = {{switch_0}};
+	&amp;lt;/script&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;item&amp;quot;&amp;gt;
+	&amp;lt;p&amp;gt;Steckdose 2
+&amp;lt;/p&amp;gt;
+	&amp;lt;label class=&amp;quot;switch&amp;quot;&amp;gt;
+		&amp;lt;input type=&amp;quot;checkbox&amp;quot; id=&amp;quot;switch_0&amp;quot; onclick=&amp;#039;handle(this)&amp;#039;&amp;gt;
+		&amp;lt;span class=&amp;quot;slider round&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+	&amp;lt;/label&amp;gt;
+	&amp;lt;script&amp;gt;
+		document.getElementById(&amp;quot;switch_0&amp;quot;).checked = {{switch_0}};
+	&amp;lt;/script&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&lt;/div&gt;
+&lt;div class=&quot;group&quot;&gt;
+	&lt;h2&gt;Steckdosengruppe ABC
+&lt;/h2&gt;
+	&amp;lt;div class=&amp;quot;item&amp;quot;&amp;gt;
+	&amp;lt;p&amp;gt;Steckdose A
+&amp;lt;/p&amp;gt;
+	&amp;lt;label class=&amp;quot;switch&amp;quot;&amp;gt;
+		&amp;lt;input type=&amp;quot;checkbox&amp;quot; id=&amp;quot;switch_0&amp;quot; onclick=&amp;#039;handle(this)&amp;#039;&amp;gt;
+		&amp;lt;span class=&amp;quot;slider round&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+	&amp;lt;/label&amp;gt;
+	&amp;lt;script&amp;gt;
+		document.getElementById(&amp;quot;switch_0&amp;quot;).checked = {{switch_0}};
+	&amp;lt;/script&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;item&amp;quot;&amp;gt;
+	&amp;lt;p&amp;gt;Steckdose B&amp;lt;/p&amp;gt;
+	&amp;lt;label class=&amp;quot;switch&amp;quot;&amp;gt;
+		&amp;lt;input type=&amp;quot;checkbox&amp;quot; id=&amp;quot;switch_0&amp;quot; onclick=&amp;#039;handle(this)&amp;#039;&amp;gt;
+		&amp;lt;span class=&amp;quot;slider round&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+	&amp;lt;/label&amp;gt;
+	&amp;lt;script&amp;gt;
+		document.getElementById(&amp;quot;switch_0&amp;quot;).checked = {{switch_0}};
+	&amp;lt;/script&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&lt;/div&gt;
+
+</div>
+<script>
+	//
+</script>
+</body>
+</html>
