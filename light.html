@@ -9,6 +9,9 @@
 		function handle(cb) {
 			$.post("receiver/"+cb.id+"/" + cb.value.replace("#", ""), function(){});
 		}
+		function sendColor(device, pins, value) {
+			$.post("receiver/"+device+"/" + pins+"-"+value.replace("#", ""), function(){});
+		}
 	</script>
 </head>
 <body>
@@ -21,7 +24,7 @@
 	<div class="group">
 		<h2>Lichtgruppe 1:</h2>
 		<div>
-			<input type="color" value="#{{color_1}}" class="light" id="color_1" onchange="handle(this)">
+			<input type="color" value="#{{color_1}}" class="light" id="color_1" onchange="sendColor('light', '12,25,24', this.value)">
 			<label>Beleuchtung</label>
 			<div class="slidecontainer"> 
 				<input type="range" min="0" max="100" value="{{light_1}}" class="slider" id="light_1" onchange="handle(this)">

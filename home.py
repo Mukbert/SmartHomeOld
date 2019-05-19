@@ -53,6 +53,22 @@ def worker(key, value):
 
     if key == "infrarot":
         os.system("irsend SEND_ONCE PioneerAVR " + value)
+    elif key == "light":
+        x = value.split("-")
+        pins = x[0].split(",")
+        value = x[1]
+        red, green, blue = hex_to_rgb(value)
+        
+        os.system("pigs p " + pins[0] + " " + red)
+        os.system("pigs p " + pins[1] + " " + green)
+        os.system("pigs p " + pins[2] + " " + blue)
+
+
+
+def hex_to_rgb(value):
+    value = value.lstrip('#')
+    lv = len(value)
+    return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
 
 
 if __name__ == '__main__':   
