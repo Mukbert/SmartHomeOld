@@ -46,8 +46,7 @@ def switch(page):
             var["temperature"] = "ERROR"
             pass
 
-        os.system("/etc/openhab2/scripts/weatherstation.py humidity")
-        var["humidity"] = command("/etc/openhab2/scripts/weatherstation.py humidity")
+        var["humidity"] = command("python /etc/openhab2/scripts/weatherstation.py humidity")
         
 
     return template(var["page"] + ".html", **var)
