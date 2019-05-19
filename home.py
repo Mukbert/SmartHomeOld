@@ -1,6 +1,7 @@
 from bottle import route, run, template, static_file, request
 import sys, os, io
 import subprocess
+import script
 
 
 var = dict()
@@ -46,7 +47,7 @@ def switch(page):
             var["temperature"] = "ERROR"
             pass
 
-        var["humidity"] = command("python /etc/openhab2/scripts/weatherstation.py humidity")
+        var["humidity"] = script.get_humidity()
         
 
     return template(var["page"] + ".html", **var)
