@@ -1,6 +1,7 @@
 from bottle import route, run, template, static_file, request
 import sys, os, io
 import subprocess
+import pioneer
 try:
     import script
 except:
@@ -90,6 +91,8 @@ def worker(key, value):
         value = "ON" if x[1] == "true" else "OFF"
         
         os.system("/opt/433Utils/RPi_utils/run.sh " + key + " " + value)
+    elif key == "pioneer":
+        pioneer.talk(value)
 
 
 

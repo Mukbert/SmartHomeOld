@@ -20,7 +20,7 @@
 </div>
 <div class="content">
 	<div class="group" style="display:inline-block">
-		<p>AVR-Receiver</p>
+		<p>AVR-Receiver (Infrarot)</p>
 		<div class="block">
 			<a id="settings" onclick='send("infrarot", "KEY_POWER")'>
 				<i class='fas fa-power-off' style='font-size:300%'></i>
@@ -39,6 +39,90 @@
 		<div class="block">
 			<a id="settings" onclick='send("infrarot", "KEY_VOLUMEUP")'>
 				<i class='fas fa-volume-up' style='font-size:300%'></i>
+			</a>
+		</div>
+	</div>
+	
+	<div class="group" style="display:inline-block">
+		<p>AVR-Receiver (Telnet)</p>
+		<div class="block">
+				<a id="settings" onclick='send("pioneer", "PO")'>
+					<i class='fas fa-power-off' style='font-size:300%'></i>
+				</a>
+			</div>
+			<div class="block">
+				<a id="settings" onclick='send("pioneer", "MZ")'>
+					<i class='fas fa-volume-mute' style='font-size:300%'></i>
+				</a>
+			</div>
+			<div class="block">
+				<a id="settings" onclick='send("pioneer", "VD")'>
+					<i class='fas fa-volume-down' style='font-size:300%'></i>
+				</a>
+			</div>
+			<div class="block">
+				<a id="settings" onclick='send("pioneer", "VU")'>
+					<i class='fas fa-volume-up' style='font-size:300%'></i>
+				</a>
+			</div>
+	</div>
+	<div class="group" style="display:inline-block">
+		<p>Input</p>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "05FN")'>
+				<p>TV</p>
+				<i class='fas fa-tv' style='font-size:300%'></i>
+			</a>
+		</div>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "26FN")'>
+				<p>Radio</p>
+				<i class='fas fa-music' style='font-size:300%'></i>
+			</a>
+		</div>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "19FN")'>
+				<p>HDMI 1</p>
+				<i class='fas fa-tv' style='font-size:300%'></i>
+			</a>
+		</div>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "20FN")'>
+				<p>HDMI 2</p>
+				<i class='fas fa-tv' style='font-size:300%'></i>
+			</a>
+		</div>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "21FN")'>
+				<p>HDMI 3</p>
+				<i class='fas fa-tv' style='font-size:300%'></i>
+			</a>
+		</div>
+	</div>	
+	<div class="group" style="display:inline-block">
+		<p>Hörpositionen</p>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "1MC")'>
+				<p>Raum</p>
+				<i class='fab fa-chromecast' style='font-size:300%'></i>
+			</a>
+		</div>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "2MC")'>
+				<p>Schreibtisch</p>
+				<i class='fas fa-chair' style='font-size:300%'></i>
+			</a>
+		</div>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "3MC")'>
+				<p>Film</p>
+				<i class='fas fa-film' style='font-size:300%'></i>
+			</a>
+		</div>
+		<div class="block">
+			<a id="settings" onclick='send("pioneer", "4MC")'>
+				<p>Sofa</p>
+				<i class='fas fa-couch' style='font-size:300%'></i>
 			</a>
 		</div>
 	</div>
