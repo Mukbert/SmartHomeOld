@@ -48,7 +48,7 @@ def hello(device, action):
 
 @route('/receiver/<key>/<value>', method = 'POST')
 def worker(key, value):
-    print(key, value, file=sys.stderr)
+    #print(key, value, file=sys.stderr)
     var[key] = value
 
     if key == "infrarot":
