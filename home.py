@@ -37,9 +37,13 @@ def switch(page):
     var["page"] = page
 
     if page == "weather":
-        with open("/sys/bus/w1/devices/28-8000002b2904/w1_slave") as file:
-            var["temperature"] = float(file.read()) / 1000
-    
+        try:
+            with open("/sys/bus/w1/devices/28-8000002b2904/w1_slave") as file:
+                var["temperature"] = float(file.readlines()[1].split("=")[1]) / 1000
+        except expression as identifier:
+            pass
+        
+
     return template(var["page"] + ".html", **var)
 
 @route('/<device>/<action>')
