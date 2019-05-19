@@ -43,12 +43,13 @@ def switch(page):
             #with open("/sys/bus/w1/devices/28-8000002b2904/w1_slave") as file:
             #    var["temperature"] = float(file.readlines()[1].split("=")[1]) / 1000
         except:
+            var["temperature"] = "ERROR"
             pass
 
         try:
             var["humidity"] = command("/etc/openhab2/scripts/weatherstation.py humidity")
         except:
-            pass
+            var["humidity"] = "ERROR"
         
 
     return template(var["page"] + ".html", **var)
